@@ -487,8 +487,10 @@ body.menu-locked { overflow: hidden; }
 }
 .hero__pause-icon::before { left: 1px; }
 .hero__pause-icon::after  { right: 1px; }
-.hero__pause[aria-pressed="true"] .hero__pause-icon::after { display: none; }
-.hero__pause[aria-pressed="true"] .hero__pause-icon::before {
+.hero__pause[aria-pressed="true"] .hero__pause-icon::after,
+.community__pause[aria-pressed="true"] .hero__pause-icon::after { display: none; }
+.hero__pause[aria-pressed="true"] .hero__pause-icon::before,
+.community__pause[aria-pressed="true"] .hero__pause-icon::before {
   left: 1px;
   width: 0; height: 0;
   background: none;
@@ -847,6 +849,75 @@ body.menu-locked { overflow: hidden; }
   text-underline-offset: 3px;
 }
 .speaker--soon a:hover { color: var(--burgundy-dark); }
+
+/* Community photos — one row of equal-height photos that drifts left to right.
+   Without JS (or with reduced motion) it is a still row that scrolls sideways. */
+.community { margin-top: clamp(3rem, 2.5rem + 2vw, 4.5rem); }
+.community__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  margin-bottom: 1.5rem;
+}
+.community__title { font-size: var(--fs-h3); }
+.community__logo { display: block; width: 9rem; }
+.community__logo img { width: 100%; height: auto; }
+
+.community__viewport {
+  overflow-x: auto;
+  border-radius: var(--radius);
+}
+.community .community__track {
+  display: flex;
+  width: max-content;
+}
+/* Spacing sits inside each item (not gap) so the duplicated half is exactly 50% wide */
+.community__track li {
+  flex: none;
+  height: clamp(13rem, 9rem + 12vw, 20rem);
+  padding-inline-end: .75rem;
+}
+.community__track picture { display: block; height: 100%; }
+.community__track img {
+  width: auto;
+  height: 100%;
+  border-radius: var(--radius);
+}
+
+.community.is-moving .community__viewport { overflow: hidden; }
+.community.is-moving .community__track { animation: community-drift 90s linear infinite; }
+.community.is-paused .community__track,
+.community.is-moving .community__viewport:hover .community__track { animation-play-state: paused; }
+
+@keyframes community-drift {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+.community__pause {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  min-height: 2.75rem;
+  margin-top: .5rem;
+  padding: .4rem 0;
+  background: transparent;
+  border: 0;
+  color: var(--slate);
+  font-size: .8125rem;
+  font-weight: 600;
+}
+.community__pause:hover { color: var(--burgundy); }
+
+@media (min-width: 48em) {
+  .community__track li { padding-inline-end: 1.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .community.is-moving .community__track { animation: none; }
+}
 
 /* ==========================================================================
    5. Why It Matters — centred intro, stat card with business tabs, photo

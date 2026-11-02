@@ -346,6 +346,81 @@
           </ul>
         </div>
 
+        <!-- Community photos: supplied by the client (Cypress Grove Winery owners), no story copy yet.
+             community.js duplicates the list and drifts it left to right; without JS or with
+             reduced motion it is a still row that scrolls sideways. -->
+        <div class="community" data-community>
+          <div class="community__head">
+            <h3 class="community__title" id="community-title">From our community</h3>
+            <picture class="community__logo">
+              <source type="image/webp" srcset="images/stories/cypress-grove-logo-600.webp">
+              <img src="images/stories/cypress-grove-logo-600.png" alt="Cypress Grove Winery" width="600" height="341" loading="lazy">
+            </picture>
+          </div>
+          <div class="community__viewport">
+          <ul class="community__track" aria-labelledby="community-title" data-community-track>
+              <li>
+                <picture>
+                  <source type="image/webp" srcset="images/stories/purchase-day-700.webp 700w, images/stories/purchase-day-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
+                  <img src="images/stories/purchase-day-700.jpg" srcset="images/stories/purchase-day-700.jpg 700w, images/stories/purchase-day-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="Two business owners holding bottles of wine outside a wine tasting room" width="1200" height="900" loading="lazy">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source type="image/webp" srcset="images/stories/doree-dan-vineyard-700.webp 700w, images/stories/doree-dan-vineyard-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
+                  <img src="images/stories/doree-dan-vineyard-700.jpg" srcset="images/stories/doree-dan-vineyard-700.jpg 700w, images/stories/doree-dan-vineyard-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="Two winery owners holding bottles of wine between rows of vines" width="900" height="1200" loading="lazy">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source type="image/webp" srcset="images/stories/bottling-700.webp 700w, images/stories/bottling-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
+                  <img src="images/stories/bottling-700.jpg" srcset="images/stories/bottling-700.jpg 700w, images/stories/bottling-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="Labeled Cypress Grove wine bottles moving along a bottling line" width="1200" height="800" loading="lazy">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source type="image/webp" srcset="images/stories/dan-barrels-700.webp 700w, images/stories/dan-barrels-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
+                  <img src="images/stories/dan-barrels-700.jpg" srcset="images/stories/dan-barrels-700.jpg 700w, images/stories/dan-barrels-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="A winery owner on a ladder beside stacked wine barrels, raising a glass" width="800" height="1200" loading="lazy">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source type="image/webp" srcset="images/stories/doree-bottling-700.webp 700w, images/stories/doree-bottling-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
+                  <img src="images/stories/doree-bottling-700.jpg" srcset="images/stories/doree-bottling-700.jpg 700w, images/stories/doree-bottling-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="A winery owner smiling beside a bottling machine" width="1200" height="800" loading="lazy">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source type="image/webp" srcset="images/stories/barrels-700.webp 700w, images/stories/barrels-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
+                  <img src="images/stories/barrels-700.jpg" srcset="images/stories/barrels-700.jpg 700w, images/stories/barrels-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="Two winery owners holding bottles in front of racks of oak barrels" width="900" height="1200" loading="lazy">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source type="image/webp" srcset="images/stories/vineyards-700.webp 700w, images/stories/vineyards-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
+                  <img src="images/stories/vineyards-700.jpg" srcset="images/stories/vineyards-700.jpg 700w, images/stories/vineyards-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="Vineyard rows in evening light below green hills" width="1200" height="675" loading="lazy">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source type="image/webp" srcset="images/stories/dan-vineyard-700.webp 700w, images/stories/dan-vineyard-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
+                  <img src="images/stories/dan-vineyard-700.jpg" srcset="images/stories/dan-vineyard-700.jpg 700w, images/stories/dan-vineyard-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="A winery owner holding up two bottles of wine in a vineyard" width="900" height="1200" loading="lazy">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source type="image/webp" srcset="images/stories/doree-dan-tasting-700.webp 700w, images/stories/doree-dan-tasting-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
+                  <img src="images/stories/doree-dan-tasting-700.jpg" srcset="images/stories/doree-dan-tasting-700.jpg 700w, images/stories/doree-dan-tasting-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="Two winery owners tasting white wine at an outdoor table" width="1200" height="800" loading="lazy">
+                </picture>
+              </li>
+            </ul>
+          </div>
+          <button type="button" class="community__pause" aria-pressed="false" data-community-pause hidden>
+            <span class="hero__pause-icon"></span>
+            <span class="community__pause-label">Pause photos</span>
+          </button>
+        </div>
+
       </div>
     </section>
 
@@ -599,6 +674,7 @@
   <script src="javascript/active-nav.js" defer></script>
   <script src="javascript/hero.js" defer></script>
   <script src="javascript/why.js" defer></script>
+  <script src="javascript/community.js" defer></script>
   <script src="javascript/to-top.js" defer></script>
   <script src="javascript/signup.js" defer></script>
   <script src="javascript/interest-prefill.js" defer></script>
