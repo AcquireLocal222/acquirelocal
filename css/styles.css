@@ -531,16 +531,20 @@ body.menu-locked { overflow: hidden; }
    Shared section rhythm
    ========================================================================== */
 .about,
+.why,
+.stories,
 .event,
 .agenda,
-.why,
 .partners,
 .join { padding-block: var(--section-y); }
 
-/* About white · Event off-white · Agenda white · Why off-white · Partners white · Join off-white */
-.event,
+/* About white · Why off-white · Community white · Event off-white · Agenda white · Partners white · Join off-white */
 .why,
+.event,
 .join { background: var(--surface); }
+
+/* Agenda and Partners are both white, so a hairline separates them */
+.partners { border-top: 1px solid var(--line); }
 
 /* Lead paragraphs under section headlines */
 .about__text,
@@ -852,7 +856,6 @@ body.menu-locked { overflow: hidden; }
 
 /* Community photos — one row of equal-height photos that drifts left to right.
    Without JS (or with reduced motion) it is a still row that scrolls sideways. */
-.community { margin-top: clamp(3rem, 2.5rem + 2vw, 4.5rem); }
 .community__head {
   display: flex;
   flex-wrap: wrap;
@@ -861,7 +864,6 @@ body.menu-locked { overflow: hidden; }
   gap: 1rem 2rem;
   margin-bottom: 1.5rem;
 }
-.community__title { font-size: var(--fs-h3); }
 .community__logo { display: block; width: 9rem; }
 .community__logo img { width: 100%; height: auto; }
 

@@ -63,9 +63,9 @@
         <nav class="nav__menu" id="nav-menu" aria-label="Main" data-lenis-prevent>
           <ul class="nav__list">
             <li><a class="nav__link" href="#about"><span class="nav__label">About</span></a></li>
+            <li><a class="nav__link" href="#why"><span class="nav__label">Why It Matters</span></a></li>
             <li><a class="nav__link" href="#event"><span class="nav__label">The Event</span></a></li>
             <li><a class="nav__link" href="#agenda"><span class="nav__label">Agenda</span></a></li>
-            <li><a class="nav__link" href="#why"><span class="nav__label">Why It Matters</span></a></li>
             <li><a class="nav__link" href="#partners"><span class="nav__label">Partners</span></a></li>
             <li><a class="nav__link" href="#join"><span class="nav__label">Join Us</span></a></li>
           </ul>
@@ -214,6 +214,144 @@
       </div>
     </section>
 
+    <!-- ============ WHY IT MATTERS ============ -->
+    <section class="why" id="why" aria-labelledby="why-title">
+      <div class="container">
+
+        <div class="why__intro">
+          <p class="eyebrow why__eyebrow">Why It Matters</p>
+          <h2 class="why__title t-h1" id="why-title">Nobody wins when these businesses close.</h2>
+          <div class="why__copy">
+            <p class="why__text">There is an opportunity to preserve those businesses and the jobs, relationships, and services they provide, while opening a path to ownership for the next generation of entrepreneurs.</p>          </div>
+        </div>
+
+        <div class="why__body">
+          <div class="why__card">
+            <!-- Source: Partnership Deck, slide 5 -->
+            <div class="why__stat">
+              <p class="why__figure">
+                <span class="why__kicker">An estimated</span>
+                <span class="why__num" data-count="17600">17,600</span>
+                <span class="why__stat-label">Brooklyn business owners are expected to retire within 10 years, and many haven’t decided what comes next.</span>
+              </p>
+              <p class="why__source">Estimate applies the 38% of NYC owners expecting retirement within 10 years to Brooklyn’s 46,300 small businesses; it does not forecast completed sales. Sources: NYCEDC (2024); Chase Local Snapshot succession survey (2026).</p>
+            </div>
+
+            <p class="why__lead" id="why-lead">Without a buyer or a plan, good businesses can close:</p>
+            <div class="why__tabs" role="group" aria-labelledby="why-lead">
+                <button class="why__tab is-active" type="button" id="why-tab-hardware" aria-controls="why-panel-hardware" aria-pressed="true">The corner hardware store</button>
+                <button class="why__tab" type="button" id="why-tab-restaurant" aria-controls="why-panel-restaurant" aria-pressed="false">The family restaurant</button>
+                <button class="why__tab" type="button" id="why-tab-firm" aria-controls="why-panel-firm" aria-pressed="false">The firm that’s served the block for 30 years</button>
+            </div>
+          </div>
+
+          <div class="why__media">
+            <figure class="why__photo is-active" id="why-panel-hardware">
+              <picture>
+                <source type="image/webp" srcset="images/why/why-hardware-700.webp 700w, images/why/why-hardware-1100.webp 1100w" sizes="(min-width: 64em) 45vw, 100vw">
+                <img src="images/why/why-hardware-1100.jpg" srcset="images/why/why-hardware-700.jpg 700w, images/why/why-hardware-1100.jpg 1100w" sizes="(min-width: 64em) 45vw, 100vw" alt="An older couple working together in their workshop" loading="lazy">
+              </picture>
+            </figure>
+            <figure class="why__photo" id="why-panel-restaurant" hidden>
+              <picture>
+                <source type="image/webp" srcset="images/why/why-restaurant-700.webp 700w, images/why/why-restaurant-1100.webp 1100w" sizes="(min-width: 64em) 45vw, 100vw">
+                <img src="images/why/why-restaurant-1100.jpg" srcset="images/why/why-restaurant-700.jpg 700w, images/why/why-restaurant-1100.jpg 1100w" sizes="(min-width: 64em) 45vw, 100vw" alt="Tables and chairs set outside a neighborhood restaurant" loading="lazy">
+              </picture>
+            </figure>
+            <figure class="why__photo" id="why-panel-firm" hidden>
+              <picture>
+                <source type="image/webp" srcset="images/why/why-firm-700.webp 700w, images/why/why-firm-1100.webp 1100w" sizes="(min-width: 64em) 45vw, 100vw">
+                <img src="images/why/why-firm-1100.jpg" srcset="images/why/why-firm-700.jpg 700w, images/why/why-firm-1100.jpg 1100w" sizes="(min-width: 64em) 45vw, 100vw" alt="A longtime craftsman at work in his studio" loading="lazy">
+              </picture>
+            </figure>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ FROM OUR COMMUNITY ============ -->
+    <section class="stories" id="community" aria-labelledby="community-title">
+      <div class="container">
+
+        <!-- Community photos: supplied by the client (Cypress Grove Winery owners), no story copy yet.
+             community.js duplicates the list and drifts it left to right; without JS or with
+             reduced motion it is a still row that scrolls sideways. -->
+        <div class="community" data-community>
+          <div class="community__head">
+            <h2 class="community__title t-h1" id="community-title">From our community</h2>
+            <picture class="community__logo">
+              <source type="image/webp" srcset="images/stories/cypress-grove-logo-600.webp">
+              <img src="images/stories/cypress-grove-logo-600.png" alt="Cypress Grove Winery" width="600" height="341" loading="lazy">
+            </picture>
+          </div>
+          <div class="community__viewport">
+          <ul class="community__track" aria-labelledby="community-title" data-community-track>
+              <li>
+                <picture>
+                  <source type="image/webp" srcset="images/stories/purchase-day-700.webp 700w, images/stories/purchase-day-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
+                  <img src="images/stories/purchase-day-700.jpg" srcset="images/stories/purchase-day-700.jpg 700w, images/stories/purchase-day-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="Two business owners holding bottles of wine outside a wine tasting room" width="1200" height="900" loading="lazy">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source type="image/webp" srcset="images/stories/doree-dan-vineyard-700.webp 700w, images/stories/doree-dan-vineyard-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
+                  <img src="images/stories/doree-dan-vineyard-700.jpg" srcset="images/stories/doree-dan-vineyard-700.jpg 700w, images/stories/doree-dan-vineyard-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="Two winery owners holding bottles of wine between rows of vines" width="900" height="1200" loading="lazy">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source type="image/webp" srcset="images/stories/bottling-700.webp 700w, images/stories/bottling-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
+                  <img src="images/stories/bottling-700.jpg" srcset="images/stories/bottling-700.jpg 700w, images/stories/bottling-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="Labeled Cypress Grove wine bottles moving along a bottling line" width="1200" height="800" loading="lazy">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source type="image/webp" srcset="images/stories/dan-barrels-700.webp 700w, images/stories/dan-barrels-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
+                  <img src="images/stories/dan-barrels-700.jpg" srcset="images/stories/dan-barrels-700.jpg 700w, images/stories/dan-barrels-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="A winery owner on a ladder beside stacked wine barrels, raising a glass" width="800" height="1200" loading="lazy">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source type="image/webp" srcset="images/stories/doree-bottling-700.webp 700w, images/stories/doree-bottling-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
+                  <img src="images/stories/doree-bottling-700.jpg" srcset="images/stories/doree-bottling-700.jpg 700w, images/stories/doree-bottling-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="A winery owner smiling beside a bottling machine" width="1200" height="800" loading="lazy">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source type="image/webp" srcset="images/stories/barrels-700.webp 700w, images/stories/barrels-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
+                  <img src="images/stories/barrels-700.jpg" srcset="images/stories/barrels-700.jpg 700w, images/stories/barrels-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="Two winery owners holding bottles in front of racks of oak barrels" width="900" height="1200" loading="lazy">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source type="image/webp" srcset="images/stories/vineyards-700.webp 700w, images/stories/vineyards-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
+                  <img src="images/stories/vineyards-700.jpg" srcset="images/stories/vineyards-700.jpg 700w, images/stories/vineyards-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="Vineyard rows in evening light below green hills" width="1200" height="675" loading="lazy">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source type="image/webp" srcset="images/stories/dan-vineyard-700.webp 700w, images/stories/dan-vineyard-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
+                  <img src="images/stories/dan-vineyard-700.jpg" srcset="images/stories/dan-vineyard-700.jpg 700w, images/stories/dan-vineyard-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="A winery owner holding up two bottles of wine in a vineyard" width="900" height="1200" loading="lazy">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source type="image/webp" srcset="images/stories/doree-dan-tasting-700.webp 700w, images/stories/doree-dan-tasting-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
+                  <img src="images/stories/doree-dan-tasting-700.jpg" srcset="images/stories/doree-dan-tasting-700.jpg 700w, images/stories/doree-dan-tasting-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="Two winery owners tasting white wine at an outdoor table" width="1200" height="800" loading="lazy">
+                </picture>
+              </li>
+            </ul>
+          </div>
+          <button type="button" class="community__pause" aria-pressed="false" data-community-pause hidden>
+            <span class="hero__pause-icon"></span>
+            <span class="community__pause-label">Pause photos</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
     <!-- ============ THE EVENT — ticket card ============ -->
     <section class="event" id="event" aria-labelledby="event-title">
       <div class="container">
@@ -344,137 +482,6 @@
               <p class="speaker__role"><a href="#join-form">Join the community</a> to hear when the lineup is confirmed.</p>
             </li>
           </ul>
-        </div>
-
-        <!-- Community photos: supplied by the client (Cypress Grove Winery owners), no story copy yet.
-             community.js duplicates the list and drifts it left to right; without JS or with
-             reduced motion it is a still row that scrolls sideways. -->
-        <div class="community" data-community>
-          <div class="community__head">
-            <h3 class="community__title" id="community-title">From our community</h3>
-            <picture class="community__logo">
-              <source type="image/webp" srcset="images/stories/cypress-grove-logo-600.webp">
-              <img src="images/stories/cypress-grove-logo-600.png" alt="Cypress Grove Winery" width="600" height="341" loading="lazy">
-            </picture>
-          </div>
-          <div class="community__viewport">
-          <ul class="community__track" aria-labelledby="community-title" data-community-track>
-              <li>
-                <picture>
-                  <source type="image/webp" srcset="images/stories/purchase-day-700.webp 700w, images/stories/purchase-day-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
-                  <img src="images/stories/purchase-day-700.jpg" srcset="images/stories/purchase-day-700.jpg 700w, images/stories/purchase-day-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="Two business owners holding bottles of wine outside a wine tasting room" width="1200" height="900" loading="lazy">
-                </picture>
-              </li>
-              <li>
-                <picture>
-                  <source type="image/webp" srcset="images/stories/doree-dan-vineyard-700.webp 700w, images/stories/doree-dan-vineyard-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
-                  <img src="images/stories/doree-dan-vineyard-700.jpg" srcset="images/stories/doree-dan-vineyard-700.jpg 700w, images/stories/doree-dan-vineyard-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="Two winery owners holding bottles of wine between rows of vines" width="900" height="1200" loading="lazy">
-                </picture>
-              </li>
-              <li>
-                <picture>
-                  <source type="image/webp" srcset="images/stories/bottling-700.webp 700w, images/stories/bottling-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
-                  <img src="images/stories/bottling-700.jpg" srcset="images/stories/bottling-700.jpg 700w, images/stories/bottling-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="Labeled Cypress Grove wine bottles moving along a bottling line" width="1200" height="800" loading="lazy">
-                </picture>
-              </li>
-              <li>
-                <picture>
-                  <source type="image/webp" srcset="images/stories/dan-barrels-700.webp 700w, images/stories/dan-barrels-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
-                  <img src="images/stories/dan-barrels-700.jpg" srcset="images/stories/dan-barrels-700.jpg 700w, images/stories/dan-barrels-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="A winery owner on a ladder beside stacked wine barrels, raising a glass" width="800" height="1200" loading="lazy">
-                </picture>
-              </li>
-              <li>
-                <picture>
-                  <source type="image/webp" srcset="images/stories/doree-bottling-700.webp 700w, images/stories/doree-bottling-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
-                  <img src="images/stories/doree-bottling-700.jpg" srcset="images/stories/doree-bottling-700.jpg 700w, images/stories/doree-bottling-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="A winery owner smiling beside a bottling machine" width="1200" height="800" loading="lazy">
-                </picture>
-              </li>
-              <li>
-                <picture>
-                  <source type="image/webp" srcset="images/stories/barrels-700.webp 700w, images/stories/barrels-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
-                  <img src="images/stories/barrels-700.jpg" srcset="images/stories/barrels-700.jpg 700w, images/stories/barrels-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="Two winery owners holding bottles in front of racks of oak barrels" width="900" height="1200" loading="lazy">
-                </picture>
-              </li>
-              <li>
-                <picture>
-                  <source type="image/webp" srcset="images/stories/vineyards-700.webp 700w, images/stories/vineyards-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
-                  <img src="images/stories/vineyards-700.jpg" srcset="images/stories/vineyards-700.jpg 700w, images/stories/vineyards-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="Vineyard rows in evening light below green hills" width="1200" height="675" loading="lazy">
-                </picture>
-              </li>
-              <li>
-                <picture>
-                  <source type="image/webp" srcset="images/stories/dan-vineyard-700.webp 700w, images/stories/dan-vineyard-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
-                  <img src="images/stories/dan-vineyard-700.jpg" srcset="images/stories/dan-vineyard-700.jpg 700w, images/stories/dan-vineyard-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="A winery owner holding up two bottles of wine in a vineyard" width="900" height="1200" loading="lazy">
-                </picture>
-              </li>
-              <li>
-                <picture>
-                  <source type="image/webp" srcset="images/stories/doree-dan-tasting-700.webp 700w, images/stories/doree-dan-tasting-1200.webp 1200w" sizes="(min-width: 48em) 36rem, 24rem">
-                  <img src="images/stories/doree-dan-tasting-700.jpg" srcset="images/stories/doree-dan-tasting-700.jpg 700w, images/stories/doree-dan-tasting-1200.jpg 1200w" sizes="(min-width: 48em) 36rem, 24rem" alt="Two winery owners tasting white wine at an outdoor table" width="1200" height="800" loading="lazy">
-                </picture>
-              </li>
-            </ul>
-          </div>
-          <button type="button" class="community__pause" aria-pressed="false" data-community-pause hidden>
-            <span class="hero__pause-icon"></span>
-            <span class="community__pause-label">Pause photos</span>
-          </button>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============ WHY IT MATTERS ============ -->
-    <section class="why" id="why" aria-labelledby="why-title">
-      <div class="container">
-
-        <div class="why__intro">
-          <p class="eyebrow why__eyebrow">Why It Matters</p>
-          <h2 class="why__title t-h1" id="why-title">Nobody wins when these businesses close.</h2>
-          <div class="why__copy">
-            <p class="why__text">There is an opportunity to preserve those businesses and the jobs, relationships, and services they provide, while opening a path to ownership for the next generation of entrepreneurs.</p>          </div>
-        </div>
-
-        <div class="why__body">
-          <div class="why__card">
-            <!-- Source: Partnership Deck, slide 5 -->
-            <div class="why__stat">
-              <p class="why__figure">
-                <span class="why__kicker">An estimated</span>
-                <span class="why__num" data-count="17600">17,600</span>
-                <span class="why__stat-label">Brooklyn business owners are expected to retire within 10 years, and many haven’t decided what comes next.</span>
-              </p>
-              <p class="why__source">Estimate applies the 38% of NYC owners expecting retirement within 10 years to Brooklyn’s 46,300 small businesses; it does not forecast completed sales. Sources: NYCEDC (2024); Chase Local Snapshot succession survey (2026).</p>
-            </div>
-
-            <p class="why__lead" id="why-lead">Without a buyer or a plan, good businesses can close:</p>
-            <div class="why__tabs" role="group" aria-labelledby="why-lead">
-                <button class="why__tab is-active" type="button" id="why-tab-hardware" aria-controls="why-panel-hardware" aria-pressed="true">The corner hardware store</button>
-                <button class="why__tab" type="button" id="why-tab-restaurant" aria-controls="why-panel-restaurant" aria-pressed="false">The family restaurant</button>
-                <button class="why__tab" type="button" id="why-tab-firm" aria-controls="why-panel-firm" aria-pressed="false">The firm that’s served the block for 30 years</button>
-            </div>
-          </div>
-
-          <div class="why__media">
-            <figure class="why__photo is-active" id="why-panel-hardware">
-              <picture>
-                <source type="image/webp" srcset="images/why/why-hardware-700.webp 700w, images/why/why-hardware-1100.webp 1100w" sizes="(min-width: 64em) 45vw, 100vw">
-                <img src="images/why/why-hardware-1100.jpg" srcset="images/why/why-hardware-700.jpg 700w, images/why/why-hardware-1100.jpg 1100w" sizes="(min-width: 64em) 45vw, 100vw" alt="An older couple working together in their workshop" loading="lazy">
-              </picture>
-            </figure>
-            <figure class="why__photo" id="why-panel-restaurant" hidden>
-              <picture>
-                <source type="image/webp" srcset="images/why/why-restaurant-700.webp 700w, images/why/why-restaurant-1100.webp 1100w" sizes="(min-width: 64em) 45vw, 100vw">
-                <img src="images/why/why-restaurant-1100.jpg" srcset="images/why/why-restaurant-700.jpg 700w, images/why/why-restaurant-1100.jpg 1100w" sizes="(min-width: 64em) 45vw, 100vw" alt="Tables and chairs set outside a neighborhood restaurant" loading="lazy">
-              </picture>
-            </figure>
-            <figure class="why__photo" id="why-panel-firm" hidden>
-              <picture>
-                <source type="image/webp" srcset="images/why/why-firm-700.webp 700w, images/why/why-firm-1100.webp 1100w" sizes="(min-width: 64em) 45vw, 100vw">
-                <img src="images/why/why-firm-1100.jpg" srcset="images/why/why-firm-700.jpg 700w, images/why/why-firm-1100.jpg 1100w" sizes="(min-width: 64em) 45vw, 100vw" alt="A longtime craftsman at work in his studio" loading="lazy">
-              </picture>
-            </figure>
-          </div>
         </div>
 
       </div>
@@ -622,9 +629,9 @@
         <p class="footer__title">Explore</p>
         <ul>
           <li><a href="#about">About</a></li>
+          <li><a href="#why">Why It Matters</a></li>
           <li><a href="#event">The Event</a></li>
           <li><a href="#agenda">Agenda</a></li>
-          <li><a href="#why">Why It Matters</a></li>
           <li><a href="#partners">Partners</a></li>
           <li><a href="html/faq.html">FAQ</a></li>
           <li><a href="#join">Join Us</a></li>
