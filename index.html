@@ -24,8 +24,10 @@
 
   <link rel="preload" href="fonts/web/noto-sans-700-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/web/noto-sans-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="images/hero/hero-5-960.webp" as="image" type="image/webp"
-        imagesrcset="images/hero/hero-5-960.webp 960w, images/hero/hero-5-1600.webp 1600w" imagesizes="(min-width: 64em) 50vw, 100vw">
+  <link rel="preload" as="image" type="image/webp" media="(min-width: 64em)"
+        imagesrcset="images/hero/hero-duo-tall-960.webp 960w, images/hero/hero-duo-tall-1440.webp 1440w" imagesizes="50vw">
+  <link rel="preload" as="image" type="image/webp" media="(max-width: 63.99em)"
+        imagesrcset="images/hero/hero-duo-1200.webp 1200w, images/hero/hero-duo-1800.webp 1800w" imagesizes="100vw">
 
   <link rel="stylesheet" href="css/vendor/lenis.css">
   <link rel="stylesheet" href="css/global.css">
@@ -110,17 +112,12 @@
 
   <main id="main" tabindex="-1">
 
-    <!-- ============ HERO — copy on white (left), rotating photos (right) ============ -->
+    <!-- ============ HERO — copy on white (left), one photo (right) ============ -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero__copy">
         <span class="rule hero__rule"></span>
         <h1 class="hero__title" id="hero-title">Where Business Ownership Meets Business Succession</h1>
-
-        <div class="hero__actions">
-          <a class="btn btn--primary btn--lg" data-eventbrite href="https://www.eventbrite.com/e/acquire-local-inaugural-event-tickets-2002596155008?aff=hero" target="_blank" rel="noopener">
-            Reserve Your Seat<span class="visually-hidden"> (opens in a new tab)</span>
-          </a>
-        </div>
+        <p class="hero__lede">An evening in Brooklyn for people ready to buy a business and owners planning what comes next.</p>
 
         <div class="hero__bar">
           <p class="hero__bar-label">Inaugural event</p>
@@ -130,40 +127,23 @@
             <li>St. Francis College, 179 Livingston Street, Brooklyn</li>
           </ul>
         </div>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg" data-eventbrite href="https://www.eventbrite.com/e/acquire-local-inaugural-event-tickets-2002596155008?aff=hero" target="_blank" rel="noopener">
+            Reserve Your Seat<span class="visually-hidden"> (opens in a new tab)</span>
+          </a>
+        </div>
       </div>
 
       <div class="hero__media">
-        <div class="hero__slides">
-          <picture class="hero__slide is-active" data-slide>
-            <source type="image/webp" srcset="images/hero/hero-5-960.webp 960w, images/hero/hero-5-1600.webp 1600w" sizes="(min-width: 64em) 50vw, 100vw">
-            <img src="images/hero/hero-5-1600.jpg" srcset="images/hero/hero-5-960.jpg 960w, images/hero/hero-5-1600.jpg 1600w" sizes="(min-width: 64em) 50vw, 100vw" alt="" width="1600" height="1760" fetchpriority="high">
-          </picture>
-          <picture class="hero__slide" data-slide>
-            <source type="image/webp" srcset="images/hero/hero-2-960.webp 960w, images/hero/hero-2-1920.webp 1920w" sizes="(min-width: 64em) 50vw, 100vw">
-            <img src="images/hero/hero-2-1920.jpg" srcset="images/hero/hero-2-960.jpg 960w, images/hero/hero-2-1920.jpg 1920w" sizes="(min-width: 64em) 50vw, 100vw" alt="" width="1920" height="1280" loading="lazy">
-          </picture>
-          <picture class="hero__slide" data-slide>
-            <source type="image/webp" srcset="images/hero/hero-4-960.webp 960w, images/hero/hero-4-1920.webp 1920w" sizes="(min-width: 64em) 50vw, 100vw">
-            <img src="images/hero/hero-4-1920.jpg" srcset="images/hero/hero-4-960.jpg 960w, images/hero/hero-4-1920.jpg 1920w" sizes="(min-width: 64em) 50vw, 100vw" alt="" width="1920" height="1280" loading="lazy">
-          </picture>
-          <picture class="hero__slide" data-slide>
-            <source type="image/webp" srcset="images/hero/hero-1-960.webp 960w, images/hero/hero-1-1920.webp 1920w" sizes="(min-width: 64em) 50vw, 100vw">
-            <img src="images/hero/hero-1-1920.jpg" srcset="images/hero/hero-1-960.jpg 960w, images/hero/hero-1-1920.jpg 1920w" sizes="(min-width: 64em) 50vw, 100vw" alt="" width="1920" height="1495" loading="lazy">
-          </picture>
-        </div>
-
-        <div class="hero__controls">
-          <div class="hero__dots" role="group" aria-label="Choose photo">
-            <button type="button" class="hero__dot is-active" aria-label="Photo 1 of 4" aria-pressed="true" data-dot="0"></button>
-            <button type="button" class="hero__dot" aria-label="Photo 2 of 4" aria-pressed="false" data-dot="1"></button>
-            <button type="button" class="hero__dot" aria-label="Photo 3 of 4" aria-pressed="false" data-dot="2"></button>
-            <button type="button" class="hero__dot" aria-label="Photo 4 of 4" aria-pressed="false" data-dot="3"></button>
-          </div>
-          <button type="button" class="hero__pause" aria-pressed="false" data-pause>
-            <span class="hero__pause-icon"></span>
-            <span class="hero__pause-label">Pause slideshow</span>
-          </button>
-        </div>
+        <!-- Desktop gets a portrait cut for the tall column; phones/tablets get the full landscape frame -->
+        <picture class="hero__photo">
+          <source media="(min-width: 64em)" type="image/webp" srcset="images/hero/hero-duo-tall-960.webp 960w, images/hero/hero-duo-tall-1440.webp 1440w" sizes="50vw">
+          <source media="(min-width: 64em)" srcset="images/hero/hero-duo-tall-960.jpg 960w, images/hero/hero-duo-tall-1440.jpg 1440w" sizes="50vw">
+          <source type="image/webp" srcset="images/hero/hero-duo-1200.webp 1200w, images/hero/hero-duo-1800.webp 1800w" sizes="100vw">
+          <img src="images/hero/hero-duo-1200.jpg" srcset="images/hero/hero-duo-1200.jpg 1200w, images/hero/hero-duo-1800.jpg 1800w" sizes="100vw"
+               alt="A longtime market owner and a younger business partner smiling together behind an Open sign" width="1200" height="934" fetchpriority="high">
+        </picture>
       </div>
     </section>
 
@@ -191,11 +171,11 @@
 
           <figure class="about__photo">
             <picture>
-              <source type="image/webp" srcset="images/about/about-studio-640.webp 640w, images/about/about-studio-1000.webp 1000w" sizes="(min-width: 48em) 50vw, 100vw">
-              <img src="images/about/about-studio-1000.jpg" srcset="images/about/about-studio-640.jpg 640w, images/about/about-studio-1000.jpg 1000w" sizes="(min-width: 48em) 50vw, 100vw"
-                   alt="An experienced professional working on her laptop in her studio" width="1000" height="666" loading="lazy">
+              <source type="image/webp" srcset="images/about/about-professional-640.webp 640w, images/about/about-professional-1000.webp 1000w" sizes="(min-width: 48em) 50vw, 100vw">
+              <img src="images/about/about-professional-1000.jpg" srcset="images/about/about-professional-640.jpg 640w, images/about/about-professional-1000.jpg 1000w" sizes="(min-width: 48em) 50vw, 100vw"
+                   alt="A mid-career professional leaving his office building" width="1000" height="750" loading="lazy">
             </picture>
-            <figcaption class="about__tag">Aspiring entrepreneurs</figcaption>
+            <figcaption class="about__tag">Experienced professionals</figcaption>
           </figure>
         </div>
 
@@ -221,8 +201,6 @@
         <div class="why__intro">
           <p class="eyebrow why__eyebrow">Why It Matters</p>
           <h2 class="why__title t-h1" id="why-title">Nobody wins when these businesses close.</h2>
-          <div class="why__copy">
-            <p class="why__text">There is an opportunity to preserve those businesses and the jobs, relationships, and services they provide, while opening a path to ownership for the next generation of entrepreneurs.</p>          </div>
         </div>
 
         <div class="why__body">
@@ -265,6 +243,10 @@
               </picture>
             </figure>
           </div>
+        </div>
+
+        <div class="why__copy">
+          <p class="why__text">There is an opportunity to preserve those businesses and the jobs, relationships, and services they provide, while opening a path to ownership for the next generation of entrepreneurs.</p>
         </div>
 
       </div>
@@ -361,12 +343,13 @@
 
           <div class="event__head">
             <h2 class="event__title t-h1" id="event-title">Our First Event: Brooklyn</h2>
+            <p class="event__meta">Thursday, December 3, 2026 · 5:00–8:30 PM<br>St. Francis College, 179 Livingston Street, Brooklyn</p>
           </div>
 
           <div class="event__copy">
-            <p class="event__text">We are bringing these two groups together on December 3 for the inaugural AcquireLocal event, hosted at St. Francis College in Brooklyn.</p>
+            <p class="event__text">We are bringing experienced professionals and legacy business owners together on December 3 for the inaugural AcquireLocal event in Brooklyn.</p>
             <p class="event__text">Business owners, aspiring entrepreneurs, lenders, advisors, and community organizations will share real experiences and practical information about acquiring or transitioning an established business.</p>
-            <p class="event__text">It is also an opportunity to meet people who can help move these conversations forward.</p>
+            <p class="event__text">You’ll also meet lenders and advisors, and can book follow-up consultations at the sponsor tables.</p>
           </div>
         </div>
 
@@ -495,50 +478,9 @@
           <div class="partners__heading">
             <p class="eyebrow">Partners</p>
             <h2 class="partners__title t-h1" id="partners-title">Help carry good businesses forward</h2>
-            <p class="partners__text">Join us in creating new entrepreneurs, preserving established businesses, and strengthening the communities that depend on them. We offer customized partnership opportunities, including year-round engagement as AcquireLocal expands into additional communities.</p>
+            <p class="partners__text">Meet owners and buyers early, before terms are set. Banks, CDFIs, accounting firms, law firms and wealth advisors can partner with us.</p>
           </div>
           <a class="btn btn--primary partners__cta" href="#join-form" data-interest="Partnerships">Become a Partner</a>
-        </div>
-
-        <div class="partners__grid">
-          <div class="pcard pcard--who">
-            <picture class="pcard__photo">
-              <source type="image/webp" srcset="images/partners/partners-700.webp 700w, images/partners/partners-1200.webp 1200w" sizes="(min-width: 64em) 38rem, 100vw">
-              <img src="images/partners/partners-1200.jpg" srcset="images/partners/partners-700.jpg 700w, images/partners/partners-1200.jpg 1200w" sizes="(min-width: 64em) 38rem, 100vw" alt="" loading="lazy">
-            </picture>
-            <div class="pcard__body">
-              <p class="pcard__kicker">Who we partner with</p>
-              <h3 class="pcard__title" id="who-title">Institutions that support entrepreneurship, succession, and local economic development</h3>
-              <ul class="pcard__pills">
-              <li>Financial institutions</li>
-              <li>Corporations</li>
-              <li>Professional services firms</li>
-              <li>Business organizations</li>
-              <li>Community &amp; civic groups</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="pcard pcard--way">
-            <svg class="pcard__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/><path d="M9 8h7M9 11.5h5"/></svg>
-            <h3 class="pcard__title">Educational programming</h3>
-            <p class="pcard__text">Help aspiring entrepreneurs and legacy owners understand acquisition and succession.</p>
-          </div>
-          <div class="pcard pcard--way">
-            <svg class="pcard__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="m9 15 2 2 4-4"/></svg>
-            <h3 class="pcard__title">Events</h3>
-            <p class="pcard__text">Take part in AcquireLocal events, starting with our inaugural evening at St. Francis College.</p>
-          </div>
-          <div class="pcard pcard--way">
-            <svg class="pcard__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
-            <h3 class="pcard__title">Sponsorships</h3>
-            <p class="pcard__text">Support the program as it grows into new communities.</p>
-          </div>
-          <div class="pcard pcard--way">
-            <svg class="pcard__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg>
-            <h3 class="pcard__title">Share expertise</h3>
-            <p class="pcard__text">Offer guidance on financing, valuation, legal, and succession questions.</p>
-          </div>
         </div>
 
         <!-- TODO: partner / sponsor logo strip once the client confirms partners (none invented here) -->
@@ -552,9 +494,12 @@
 
         <div class="join__copy">
           <p class="eyebrow">Join Us</p>
-          <h2 class="join__title t-h1" id="join-title">We look forward to seeing you in Brooklyn!</h2>
+          <h2 class="join__title t-h1" id="join-title">Join us in Brooklyn on December 3.</h2>
           <p class="join__meta">Thursday, December 3, 2026 · 5:00–8:30 PM<br>St. Francis College, 179 Livingston Street · Tickets $25</p>
           <p class="join__quote">You don’t have to be ready to acquire or transition a business to become part of the conversation.</p>
+          <a class="btn btn--primary join__register" data-eventbrite href="https://www.eventbrite.com/e/acquire-local-inaugural-event-tickets-2002596155008?aff=join" target="_blank" rel="noopener">
+            Register for the Event<span class="visually-hidden"> (opens in a new tab)</span>
+          </a>
         </div>
 
         <div class="join__card" id="join-form">
@@ -581,6 +526,10 @@
               <label for="join-email">Email <span class="req"></span></label>
               <input id="join-email" name="email" type="email" autocomplete="email" required>
             </div>
+            <div class="field">
+              <label for="join-org">Organization</label>
+              <input id="join-org" name="organization" type="text" autocomplete="organization">
+            </div>
 
             <fieldset class="choices">
               <legend>I’m interested in <span class="choices__hint">(choose any)</span></legend>
@@ -606,7 +555,7 @@
                 </label>
             </fieldset>
 
-            <button class="btn btn--primary join__submit" type="submit">Join the Community</button>
+            <button class="btn btn--primary join__submit" type="submit">Get Updates</button>
             <p class="signup__status" role="status" aria-live="polite"></p>
           </form>
         </div>
@@ -679,7 +628,6 @@
   <script src="javascript/smooth-scroll.js" defer></script>
   <script src="javascript/nav.js" defer></script>
   <script src="javascript/active-nav.js" defer></script>
-  <script src="javascript/hero.js" defer></script>
   <script src="javascript/why.js" defer></script>
   <script src="javascript/community.js" defer></script>
   <script src="javascript/to-top.js" defer></script>

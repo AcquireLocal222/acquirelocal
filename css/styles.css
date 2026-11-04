@@ -316,7 +316,7 @@ body.menu-locked { overflow: hidden; }
 }
 
 /* ==========================================================================
-   2. Hero — copy on white (left), rotating photos (right)
+   2. Hero — copy on white (left), one photo (right)
    Phones: copy first, photo below it.
    ========================================================================== */
 .hero {
@@ -331,17 +331,26 @@ body.menu-locked { overflow: hidden; }
   padding: clamp(2.5rem, 2rem + 3vw, 4rem) var(--gutter) clamp(2.5rem, 2rem + 2vw, 3.5rem);
 }
 /* The logo appears once, in the nav; the hero opens with a short gold rule + headline */
+/* Wide measure + slightly smaller size keeps the headline to two or three lines,
+   so the event card and button stay above the fold on laptops */
 .hero__title {
-  max-width: 18ch;
+  max-width: 21ch;
   margin-top: clamp(1.25rem, 1rem + 1vw, 1.75rem);
-  font-size: var(--fs-title);
-  line-height: 1.15;
+  font-size: clamp(2rem, 1.45rem + 2.2vw, 3rem);
+  line-height: 1.12;
+}
+.hero__lede {
+  max-width: 34rem;
+  margin-top: 1rem;
+  font-size: var(--fs-body-lg);
+  line-height: 1.6;
+  color: var(--ink-muted);
 }
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
   gap: .75rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 /* Event bar (burgundy, like the deck's cover slide) */
@@ -349,7 +358,7 @@ body.menu-locked { overflow: hidden; }
   align-self: stretch;
   display: grid;
   gap: .35rem;
-  margin-top: clamp(2rem, 1.5rem + 2vw, 3rem);
+  margin-top: clamp(1.5rem, 1.25rem + 1vw, 2rem);
   padding: 1.1rem 1.5rem 1.2rem;
   border-radius: var(--radius);
   background: var(--burgundy);
@@ -374,6 +383,11 @@ body.menu-locked { overflow: hidden; }
   color: var(--ink-on-burgundy-muted);
 }
 .hero__details li:nth-child(3) { display: block; white-space: normal; color: var(--ink-on-burgundy-muted); }
+/* Small phones: date, time and venue each get their own line */
+@media (max-width: 29.99em) {
+  .hero__details li { display: block; }
+  .hero__details li:nth-child(2)::before { content: none; }
+}
 
 /* ---------- Photos ---------- */
 .hero__media {
@@ -382,99 +396,15 @@ body.menu-locked { overflow: hidden; }
   overflow: hidden;
   background: var(--surface);
 }
-.hero__slides { position: absolute; inset: 0; }
-.hero__slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 1.6s ease-in-out;
-}
-.hero__slide.is-active { opacity: 1; }
-.hero__slide img {
+.hero__photo { position: absolute; inset: 0; }
+.hero__photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  will-change: transform;
+  object-position: 50% 30%;   /* both faces stay in frame at every crop */
 }
 
-/* Very slow, slight zoom while each photo is on screen (7s hold + 1.6s fade).
-   .is-leaving keeps the outgoing photo moving while it fades. */
-.hero__slide.is-active img,
-.hero__slide.is-leaving img { animation: hero-zoom 9.5s linear forwards; }
-.hero.is-paused .hero__slide img { animation-play-state: paused; }
-@keyframes hero-zoom {
-  from { transform: scale(1); }
-  to   { transform: scale(1.05); }
-}
-
-/* Per-photo focal points (keep faces in frame however the box is cropped) */
-.hero__slide:nth-child(1) img { object-position: 50% 34%; }   /* shop owner in yellow */
-.hero__slide:nth-child(2) img { object-position: 68% 20%; }   /* owner with tablet, right of centre */
-.hero__slide:nth-child(3) img { object-position: 64% 22%; }   /* owner at the counter */
-.hero__slide:nth-child(4) img { object-position: 40% 10%; }   /* couple at the produce stand */
-
-/* ---------- Slide controls ---------- */
-.hero__controls {
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: .25rem;
-  padding: 0 .25rem 0 .5rem;
-  border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, .94);
-  box-shadow: var(--shadow);
-}
-.hero__dots { display: flex; }
-.hero__dot {
-  position: relative;
-  width: 2.25rem;      /* 36px wide × 44px tall hit area */
-  height: 2.75rem;
-  padding: 0;
-  background: none;
-  border: 0;
-}
-.hero__dot::before {
-  content: "";
-  position: absolute;
-  top: 50%; left: 50%;
-  width: .625rem; height: .625rem;
-  border: 1.5px solid var(--slate);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: background-color .25s var(--ease);
-}
-.hero__dot.is-active::before { background: var(--burgundy); border-color: var(--burgundy); }
-
-.hero__pause {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  min-height: 2.75rem;
-  padding: .4rem .75rem;
-  background: transparent;
-  border: 0;
-  border-left: 1px solid var(--line);
-  color: var(--slate);
-  font-size: .8125rem;
-  font-weight: 600;
-}
-.hero__pause:hover { color: var(--burgundy); }
-.hero__pause-label { white-space: nowrap; }
-
-/* Small phones: icon-only button (label stays available to screen readers) */
-@media (max-width: 29.99em) {
-  .hero__pause { width: 2.75rem; padding: 0; justify-content: center; }
-  .hero__pause-label {
-    position: absolute;
-    width: 1px; height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-  }
-}
-
-/* Pause icon = two bars; play icon = triangle */
+/* Pause icon = two bars; play icon = triangle (used by the community photo strip) */
 .hero__pause-icon { position: relative; width: .75rem; height: .75rem; }
 .hero__pause-icon::before,
 .hero__pause-icon::after {
@@ -487,9 +417,7 @@ body.menu-locked { overflow: hidden; }
 }
 .hero__pause-icon::before { left: 1px; }
 .hero__pause-icon::after  { right: 1px; }
-.hero__pause[aria-pressed="true"] .hero__pause-icon::after,
 .community__pause[aria-pressed="true"] .hero__pause-icon::after { display: none; }
-.hero__pause[aria-pressed="true"] .hero__pause-icon::before,
 .community__pause[aria-pressed="true"] .hero__pause-icon::before {
   left: 1px;
   width: 0; height: 0;
@@ -499,8 +427,6 @@ body.menu-locked { overflow: hidden; }
   border-color: transparent transparent transparent currentColor;
 }
 
-/* Nothing to control without JS, or with one photo (reduced motion) */
-.hero:not(.is-rotating) .hero__controls { display: none; }
 
 @media (min-width: 48em) {
   .hero__media { aspect-ratio: 16 / 10; }
@@ -520,12 +446,8 @@ body.menu-locked { overflow: hidden; }
     padding-right: clamp(2.5rem, 1rem + 3vw, 5rem);
   }
   .hero__media { aspect-ratio: auto; }
-  .hero__controls { right: 1.5rem; bottom: 1.5rem; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero__slide img { animation: none !important; transform: none; }
-}
 
 /* ==========================================================================
    Shared section rhythm
@@ -575,7 +497,7 @@ body.menu-locked { overflow: hidden; }
 }
 .about__photo img { width: 100%; height: 100%; object-fit: cover; }
 .about__photo:first-of-type img { object-position: 28% 35%; }   /* her face (left) + hands with tablet */
-.about__photo:last-of-type img { object-position: 40% 40%; }    /* owner at her laptop */
+.about__photo:last-of-type img { object-position: 50% 30%; }    /* professional, face upper centre */
 .about__tag {
   margin-top: .9rem;
   font-weight: 600;
@@ -642,7 +564,8 @@ body.menu-locked { overflow: hidden; }
   gap: 1.25rem;
   margin-bottom: clamp(2.5rem, 2rem + 2.5vw, 4rem);
 }
-.event__head { display: grid; gap: 1.75rem; }
+.event__head { display: grid; gap: 1rem; }
+.event__meta { font-size: var(--fs-body-lg); line-height: 1.6; color: var(--ink-muted); }
 .event__copy { display: grid; gap: 1.1rem; }
 
 @media (min-width: 64em) {
@@ -932,7 +855,11 @@ body.menu-locked { overflow: hidden; }
   margin: 0 auto clamp(3rem, 2.5rem + 2.5vw, 4.5rem);
   text-align: center;
 }
-.why__copy { max-width: 40rem; }
+.why__copy {
+  max-width: 44rem;
+  margin: clamp(2.5rem, 2rem + 2vw, 3.5rem) auto 0;
+  text-align: center;
+}
 
 .why__body { display: grid; gap: 1.5rem; }
 @media (min-width: 64em) {
@@ -1033,87 +960,12 @@ body.menu-locked { overflow: hidden; }
 .partners__intro {
   display: grid;
   gap: 1.75rem;
-  margin-bottom: clamp(2.5rem, 2rem + 2.5vw, 4rem);
 }
 .partners__heading { display: grid; gap: 1.25rem; max-width: 46rem; }
 .partners__cta { justify-self: start; }
 @media (min-width: 64em) {
   .partners__intro { grid-template-columns: 1fr auto; align-items: end; column-gap: 3rem; }
   .partners__cta { margin-bottom: .5rem; }
-}
-
-.partners__grid { display: grid; gap: 1.25rem; }
-@media (min-width: 48em) {
-  .partners__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .pcard--who { grid-column: 1 / -1; }
-}
-@media (min-width: 64em) {
-  .partners__grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-template-areas:
-      "who who w1 w2"
-      "who who w3 w4";
-  }
-  .pcard--who { grid-area: who; }
-}
-
-.pcard {
-  display: flex;
-  flex-direction: column;
-  gap: .75rem;
-  padding: clamp(1.5rem, 1.2rem + 1vw, 2rem);
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--white);
-}
-.pcard__title { font-size: var(--fs-h4); line-height: 1.3; }
-.pcard__text { font-size: 1rem; line-height: 1.6; color: var(--ink-muted); }
-.pcard__kicker {
-  font-weight: 600;
-  font-size: var(--fs-eyebrow);
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--slate);
-}
-
-.pcard__icon {
-  width: 3rem;
-  height: 3rem;
-  margin-bottom: .5rem;
-  padding: .7rem;
-  border: 1px solid var(--gold);
-  border-radius: 50%;
-  fill: none;
-  stroke: var(--burgundy);
-  stroke-width: 1.6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-/* Who we partner with: photo on top */
-.pcard--who { padding: 0; gap: 0; }
-.pcard__photo { display: block; aspect-ratio: 16 / 9; overflow: hidden; }
-.pcard__photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 78% 42%;      /* professional working in the window, far right */
-}
-.pcard--who .pcard__body { display: grid; gap: .75rem; padding: clamp(1.5rem, 1.2rem + 1vw, 2rem); }
-.pcard--who .pcard__title { font-size: clamp(1.1875rem, 1.05rem + .5vw, 1.375rem); }
-.pcard .pcard__pills { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .5rem; }
-.pcard__pills li {
-  padding: .3rem .75rem;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
-  background: var(--surface);
-  font-weight: 600;
-  font-size: .8125rem;
-  color: var(--slate);
-}
-@media (min-width: 64em) {
-  .pcard--who .pcard__photo { aspect-ratio: auto; flex: 1; min-height: 12rem; }
 }
 
 /* ==========================================================================
@@ -1205,6 +1057,7 @@ body.menu-locked { overflow: hidden; }
 .join__copy { display: grid; gap: 1.25rem; align-content: start; justify-items: start; }
 .join__meta { font-size: var(--fs-body-lg); line-height: 1.6; color: var(--ink-muted); }
 .join__quote { margin-top: .75rem; }
+.join__register { margin-top: .75rem; }
 .join__quote {
   padding-left: 1.25rem;
   border-left: 3px solid var(--gold);
