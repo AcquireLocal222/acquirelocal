@@ -66,15 +66,34 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: .75rem;
   min-height: 4.5rem;
 }
+/* Register lives in the nav bar (not the event bar, which collapses on scroll),
+   so it stays on screen the whole way down. Phones: beside the menu button. */
+.nav__register {
+  position: relative;
+  z-index: 2;
+  order: 1;
+  margin-left: auto;
+  min-height: 2.75rem;
+  padding: .5rem 1.1rem;
+  font-size: .9375rem;
+}
+.nav__toggle { order: 2; }
 .nav__logo {
   position: relative;
   z-index: 2;
   display: block;
   width: 10.5rem;
   flex-shrink: 0;
+}
+
+/* Smallest phones (≤ 374px): slimmer logo + button so the menu toggle still fits */
+@media (max-width: 23.4375em) {
+  .nav__inner { gap: .5rem; }
+  .nav__logo { width: 7.75rem; }
+  .nav__register { padding-inline: .75rem; }
 }
 
 /* Scrolled: event bar tucks away, soft shadow under the nav */
@@ -252,7 +271,9 @@ body.menu-locked { overflow: hidden; }
 
 /* ---------- Desktop nav (75em / 1200px: below this the links + button don't fit on one line) ---------- */
 @media (min-width: 75em) {
-  .nav__inner { min-height: 5.5rem; }
+  .nav__inner { min-height: 5.5rem; gap: 1.5rem; }
+  .nav__menu { margin-left: auto; }
+  .nav__register { margin-left: 0; }
   .nav__logo { width: 12.5rem; }
   .nav__toggle { display: none; }
 
