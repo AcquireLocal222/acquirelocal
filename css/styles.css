@@ -493,10 +493,14 @@ body.menu-locked { overflow: hidden; }
   border-radius: var(--radius);
 }
 .about__photo img { width: 100%; height: 100%; object-fit: cover; }
-.about__photo:first-of-type img { object-position: 28% 18%; }   /* room above her head, face (left) + hands with tablet */
-.about__photo:last-of-type img { object-position: 50% 50%; }    /* pre-cropped to 4:3 with room above her head */
+.about__photo--legacy img { object-position: 28% 18%; }   /* room above her head, face (left) + hands with tablet */
+.about__photo--pro img { object-position: 50% 50%; }      /* pre-cropped to 4:3 with room above her head */
+/* Each photo with its label, heading and copy */
+.about__card { display: grid; align-content: start; gap: .6rem; }
+.about__card-title { font-size: var(--fs-h4); line-height: 1.3; color: var(--burgundy); }
+.about__card-copy { display: grid; gap: .85rem; line-height: 1.65; color: var(--ink); }
 .about__tag {
-  margin-top: .9rem;
+  margin-top: .4rem;
   font-weight: 600;
   font-size: var(--fs-eyebrow);
   letter-spacing: .16em;
@@ -505,7 +509,7 @@ body.menu-locked { overflow: hidden; }
 }
 
 @media (min-width: 48em) {
-  .about__pair { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .about__pair { grid-template-columns: 1fr 1fr; gap: 2.5rem 2rem; }
 }
 
 /* Acquisition focus: big figure, thin gold rule, copy (the deck's slide 2 footer strip) */
