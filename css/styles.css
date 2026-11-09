@@ -438,7 +438,7 @@ body.menu-locked { overflow: hidden; }
   }
   .hero__copy {
     justify-content: center;
-    padding-block: 4rem;
+    padding-block: 3rem;
     padding-left: max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter)));
     padding-right: clamp(2.5rem, 1rem + 3vw, 5rem);
   }
@@ -456,6 +456,8 @@ body.menu-locked { overflow: hidden; }
 .agenda,
 .partners,
 .join { padding-block: var(--section-y); }
+/* Why and Event share the same background, so one gap between them, not two */
+.why + .event { padding-top: 0; }
 
 /* About white · Why off-white · Event off-white · Agenda white · Partners white · Join off-white */
 .why,
@@ -563,7 +565,7 @@ body.menu-locked { overflow: hidden; }
 .event__intro {
   display: grid;
   gap: 1.25rem;
-  margin-bottom: clamp(2rem, 1.5rem + 1.5vw, 3rem);
+  margin-bottom: clamp(1.5rem, 1.25rem + 1vw, 2rem);
 }
 .event__head { display: grid; gap: 1rem; }
 .event__meta { font-size: var(--fs-body-lg); line-height: 1.6; color: var(--ink-muted); }
@@ -704,7 +706,7 @@ body.menu-locked { overflow: hidden; }
 .agenda__intro {
   display: grid;
   gap: 1rem;
-  margin-bottom: clamp(2rem, 1.5rem + 2vw, 3rem);
+  margin-bottom: clamp(1.5rem, 1.25rem + 1vw, 2rem);
 }
 .agenda__meta { font-size: var(--fs-body-lg); color: var(--ink-muted); }
 
@@ -861,7 +863,7 @@ body.menu-locked { overflow: hidden; }
   justify-items: center;
   gap: 1.25rem;
   max-width: 48rem;
-  margin: 0 auto clamp(2rem, 1.5rem + 1.5vw, 3rem);
+  margin: 0 auto clamp(1.5rem, 1.25rem + 1vw, 2rem);
   text-align: center;
 }
 .why__copy {
@@ -1179,7 +1181,7 @@ body.menu-locked { overflow: hidden; }
    9. Footer (slate)
    ========================================================================== */
 .footer {
-  padding: clamp(3.5rem, 3rem + 2vw, 5rem) 0 1.5rem;
+  padding: clamp(2.5rem, 2rem + 1.5vw, 3.5rem) 0 1.5rem;
   background: var(--slate);
   color: #fff;
 }
