@@ -12,7 +12,7 @@
   "use strict";
 
   // Set to false to switch the pop-up off site-wide (links then open Eventbrite in a new tab).
-  var ENABLED = true;
+  var ENABLED = false;
   var EVENT_ID = "2002596155008";
   var WIDGET_SRC = "https://www.eventbrite.com/static/widgets/eb_widgets.js";
 
